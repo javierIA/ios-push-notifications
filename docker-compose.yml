@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "443:443"
+    volumes:
+      - ./certs:/usr/src/app/certs
+      - ./public:/usr/src/app/public
+    environment:
+      - VAPID_MAILTO=javier.flores@ia.center
+      - VAPID_PUBLIC_KEY=BAdl2bAWRk1KRQvez2rGL2WpvC6-1RRHAyYBq4ERtDeLFy4Rfu971-4VmdGAIYVPWVB3gC-y31g5l2BXDd7NUW0
+      - VAPID_PRIVATE_KEY=uOX4dstG_3GxPUUaXYUHze9NH6gar7l9bmIZscCEf6Y
