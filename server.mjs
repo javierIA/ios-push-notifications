@@ -36,8 +36,8 @@ app.post("/save-subscription", async (req, res) => {
 
 app.use(express.static("./public"));
 
-const privateKey = fs.readFileSync('./certs/10.210.50.134.key', 'utf8');
-const certificate = fs.readFileSync('./certs/10.210.50.134.crt', 'utf8');
+const privateKey = fs.readFileSync('./certs/server.key', 'utf8');
+const certificate = fs.readFileSync('./certs/server.pem', 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 
 const httpsServer = https.createServer(credentials, app);
